@@ -40,10 +40,11 @@ define('GUTENBERG_SIMPLE_BLOCKS_PACK_VERSION', '1.0.0');
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 
+add_action('init', 'mcx_gsbp_blocks_init');
+
 function mcx_gsbp_blocks_init()
 {
     // Point to each folder that corresponds to each block within build
     register_block_type(__DIR__ . '/build/horizontal-slider');
     register_block_type(__DIR__ . '/build/vertical-slider');
 }
-add_action('init', 'mcx_gsbp_blocks_init');
