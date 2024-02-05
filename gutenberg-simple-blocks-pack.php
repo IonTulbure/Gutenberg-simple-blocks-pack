@@ -44,6 +44,6 @@ function mcx_gsbp_blocks_init()
 {
     // Point to each folder that corresponds to each block within build
     register_block_type(__DIR__ . '/build/horizontal-slider');
-    // register_block_type(__DIR__ . '/build/demo-slideshow');
+    register_block_type(__DIR__ . '/build/vertical-slider');
 }
 add_action('init', 'mcx_gsbp_blocks_init');
