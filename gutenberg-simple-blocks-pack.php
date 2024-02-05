@@ -23,14 +23,14 @@
  */
 
 // Prevent direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
 }
 
 /**
  * Current plugin version.
  */
-define( 'GUTENBERG_SIMPLE_BLOCKS_PACK_VERSION', '1.0.0' );
+define('GUTENBERG_SIMPLE_BLOCKS_PACK_VERSION', '1.0.0');
 
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
@@ -39,7 +39,11 @@ define( 'GUTENBERG_SIMPLE_BLOCKS_PACK_VERSION', '1.0.0' );
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function __block_init() {
-	register_block_type( __DIR__ . '/build' );
+
+function mcx_gsbp_blocks_init()
+{
+    // Point to each folder that corresponds to each block within build
+    register_block_type(__DIR__ . '/build/horizontal-slider');
+    // register_block_type(__DIR__ . '/build/demo-slideshow');
 }
-add_action( 'init', '__block_init' );
+add_action('init', 'mcx_gsbp_blocks_init');
