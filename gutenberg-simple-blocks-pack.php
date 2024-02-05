@@ -26,3 +26,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+
+/**
+ * Current plugin version.
+ */
+define( 'GUTENBERG_SIMPLE_BLOCKS_PACK_VERSION', '1.0.0' );
