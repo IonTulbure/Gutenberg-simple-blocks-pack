@@ -6,7 +6,7 @@
  * @package           GutenbergSimpleBlocksPack
  * @author            Ion Tulbure
  * @copyright         2024 Ion Tulbure
- * @license           GPL-2.0-or-later
+ * @license           GPL v3
  *
  * @wordpress-plugin
  * Plugin Name:       Gutenberg Simple Blocks Pack
