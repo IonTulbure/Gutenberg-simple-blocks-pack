@@ -22,7 +22,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.en.html#license-text
  */
 
-// If this file is called directly, abort.
-if (!defined('WPINC')) {
-    die;
+// Prevent direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
 }
