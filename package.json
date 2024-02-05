@@ -1,0 +1,22 @@
+{
+	"name": "gutenberg-simple-blocks-pack",
+	"version": "0.1.0",
+	"description": "Example block scaffolded with Create Block tool.",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start",
+		"add": "cd src && npx @wordpress/create-block --namespace mcx --variant dynamic --no-plugin",
+		"add-static": "cd src && npx @wordpress/create-block --namespace mcx --no-plugin"		
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^27.1.0"
+	}
+}
