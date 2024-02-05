@@ -13,8 +13,8 @@
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start",
-		"add dynamic block": "cd src && npx @wordpress/create-block --namespace mcx --variant dynamic --no-plugin",
-		"add static block": "cd src && npx @wordpress/create-block --namespace mcx --no-plugin"		
+		"add-dynamic": "cd src && npx @wordpress/create-block --namespace mcx --variant dynamic --no-plugin",
+		"add-static": "cd src && npx @wordpress/create-block --namespace mcx --variant static --no-plugin"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^27.1.0"
