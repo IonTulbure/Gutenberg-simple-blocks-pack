@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Gutenberg Simple Blocks Pack
  *
@@ -19,3 +21,8 @@
  * License:           GPL v3
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.en.html#license-text
  */
+
+// If this file is called directly, abort.
+if (!defined('WPINC')) {
+    die;
+}
