@@ -10,7 +10,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Gutenberg Simple Blocks Pack
- * Plugin URI:        https://example.com/plugin-name
+ * Plugin URI:        https://mustcode.xyz
  * Description:       A collection of blocks to extend Gutenberg.
  * Version:           1.0.0
  * Requires at least: 5.2
