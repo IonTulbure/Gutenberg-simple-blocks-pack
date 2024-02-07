@@ -7,7 +7,11 @@
 	"category": "media",
 	"icon": "slides",
 	"description": "A simple slider with horizontal or vertical layout.",
-	"example": {},
+	"example": {
+		"attributes": {
+			"preview" : true
+		}
+	},
 	"supports": {
 		"html": false
 	},
