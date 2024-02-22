@@ -4,6 +4,8 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 import { registerBlockType } from '@wordpress/blocks';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -20,7 +22,6 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 import metadata from './block.json';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 /**
  * Every block starts by registering a new block type definition.
