@@ -32,7 +32,7 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
-			{ __( 'Horizontal &amp; vertical slider. – hello from the editor!', 'simple-slider' ) }
+			{ __( 'Horizontal &amp; vertical slider. – hello from the editor!', 'gutenberg-simple-blocks-pack' ) }
 		</p>
 	);
 }
