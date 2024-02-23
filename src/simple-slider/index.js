@@ -7,10 +7,14 @@ import { registerBlockType } from '@wordpress/blocks';
 /* // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'; */
 
-// import function to register Swiper custom elements
+// Import Swiper and module
+import Swiper from 'swiper';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+
+/* // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
 // register Swiper custom elements
-register();
+register(); */
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
