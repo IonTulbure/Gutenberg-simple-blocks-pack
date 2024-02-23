@@ -18,7 +18,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function save() {
 	return (
 		<p { ...useBlockProps.save() }>
-			{ 'Horizontal &amp; vertical slider. – hello from the saved content!' }
+			{ 'Horizontal & vertical slider.' }
 		</p>
 	);
 }
