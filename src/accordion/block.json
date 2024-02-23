@@ -4,7 +4,7 @@
 	"name": "mcx/accordion",
 	"version": "0.1.0",
 	"title": "Accordion",
-	"category": "text",
+	"category": "mcx-gsbp-gutenberg-blocks",
 	"icon": "align-wide",
 	"description": "Simple accordion block.",
 	"example": {},

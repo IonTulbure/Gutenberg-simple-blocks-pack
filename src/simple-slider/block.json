@@ -4,7 +4,7 @@
 	"name": "mcx/simple-slider",
 	"version": "0.1.0",
 	"title": "Horizontal & vertical slider.",
-	"category": "media",
+	"category": "mcx-gsbp-gutenberg-blocks",
 	"icon": "slides",
 	"description": "A simple slider with horizontal or vertical layout.",
 	"example": {
