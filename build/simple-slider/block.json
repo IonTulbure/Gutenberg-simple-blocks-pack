@@ -13,7 +13,11 @@
     }
   },
   "supports": {
-    "html": false
+    "html": true,
+    "color": {
+      "background": true,
+      "text": true
+    }
   },
   "textdomain": "simple-slider",
   "editorScript": "file:./index.js",

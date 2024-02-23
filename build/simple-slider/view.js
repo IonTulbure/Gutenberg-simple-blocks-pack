@@ -1,1 +1,1 @@
-console.log("Hello World! (from mcx-simple-slider block)"),new Swiper(".swiper",{modules:[Navigation,Pagination,Scrollbar],speed:500,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
+console.log("Hello World! (from mcx-simple-slider block)");
