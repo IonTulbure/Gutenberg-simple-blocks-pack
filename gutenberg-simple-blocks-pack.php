@@ -40,11 +40,23 @@ define('GUTENBERG_SIMPLE_BLOCKS_PACK_VERSION', '1.0.0');
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 
-add_action('init', 'mcx_gsbp_blocks_init');
+/* add_action('init', 'mcx_gsbp_blocks_init');
 
 function mcx_gsbp_blocks_init()
 {
     // Point to each folder that corresponds to each block within build
     register_block_type(__DIR__ . '/build/accordion');
     register_block_type(__DIR__ . '/build/simple-slider');
+} */
+
+add_action('init', 'mcx_gsbp_blocks_init');
+
+function mcx_gsbp_blocks_init()
+{
+    // Generates an array of directory paths based on the build folder
+    $mcx_block_directories = glob(__DIR__ . "/build/*", GLOB_ONLYDIR);
+
+    foreach ($mcx_block_directories as $block) {
+        register_block_type($block);
+    }
 }
