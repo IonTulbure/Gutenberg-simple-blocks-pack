@@ -60,3 +60,22 @@ function mcx_gsbp_blocks_init()
         register_block_type($block);
     }
 }
+
+/**
+ * Adds block category to the Gutenberg block inserter
+ * 
+ */
+
+add_filter( 'block_categories_all', 'mcx_gsbp_block_category', 10, 2);
+
+function mcx_gsbp_block_category( $categories, $post ) {
+    return array_merge(
+        array(
+            array(
+                'slug' => 'mcx-gsbp-gutenberg-blocks',
+                'title' => 'MCX Gutenberg Simple Blocks',
+            ),
+        ),
+        $categories
+    );
+}
