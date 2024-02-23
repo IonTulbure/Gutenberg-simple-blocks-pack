@@ -12,7 +12,7 @@ import { __ } from "@wordpress/i18n";
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps, MediaPlaceholder } from "@wordpress/block-editor";
-import { Icon, trash } from '@wordpress/icons';
+import { Icon, trash } from "@wordpress/icons";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -30,10 +30,47 @@ import "./editor.scss";
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
+/* export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
 			{ __( 'Horizontal &amp; vertical slider. – hello from the editor!', 'gutenberg-simple-blocks-pack' ) }
 		</p>
+	);
+} */
+
+export default function Edit({ attributes, setAttributes }) {
+	const { imageID, imageURL } = attributes;
+
+	return (
+		<div {...useBlockProps()}>
+		
+		<p { ...useBlockProps() }>
+			{ __( 'Horizontal & vertical slider.', 'gutenberg-simple-blocks-pack' ) }
+		</p>
+			{!!imageID && !!imageURL ? (
+				<div className="slide-image-container">
+					<img src={imageURL} />
+					<Icon
+						className="trash-icon"
+						size={32}
+						icon={trash}
+						onClick={() => setAttributes({ imageURL: null, imageID: null })}
+					/>
+				</div>
+			) : (
+				<MediaPlaceholder
+					onSelect={(selectedImage) => {
+						setAttributes({
+							imageURL: selectedImage.url,
+							imageID: selectedImage.id,
+						});
+					}}
+					allowedTypes={["image"]}
+					multiple={false}
+					gallery={true}
+					labels={{ title: "Pick an Image" }}
+				/>
+			)}
+		</div>
 	);
 }
