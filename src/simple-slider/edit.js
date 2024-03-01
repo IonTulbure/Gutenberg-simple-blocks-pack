@@ -43,10 +43,10 @@ export default function Edit({ attributes, setAttributes }) {
 
 	return (
 		<div {...useBlockProps()}>
-		
-		<p { ...useBlockProps() }>
+			{/*<p { ...useBlockProps() }>
 			{ __( 'Horizontal & vertical slider.', 'gutenberg-simple-blocks-pack' ) }
 		</p>
+		*/}
 			{!!imageID && !!imageURL ? (
 				<div className="slide-image-container">
 					<img src={imageURL} />
@@ -65,9 +65,14 @@ export default function Edit({ attributes, setAttributes }) {
 							imageID: selectedImage.id,
 						});
 					}}
+					/* 					onSelect = {
+						( el ) => {
+							setAttributes( { imageURL: el.url } );
+						}
+					} */
 					allowedTypes={["image"]}
-					multiple={false}
-					gallery={true}
+					multiple
+					gallery
 					labels={{ title: "Pick an Image" }}
 				/>
 			)}
