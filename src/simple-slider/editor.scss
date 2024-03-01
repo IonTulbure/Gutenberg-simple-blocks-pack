@@ -6,4 +6,9 @@
 
 .wp-block-mcx-simple-slider {
 	border: 1px dotted #f00;
+
+	img {
+		height: auto;
+		max-width: 100%;
+	}
 }
