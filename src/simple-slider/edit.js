@@ -73,7 +73,10 @@ export default function Edit({ attributes, setAttributes }) {
 					allowedTypes={["image"]}
 					multiple
 					gallery
-					labels={{ title: "Pick an Image" }}
+					labels={{
+						title: "Pick an Image",
+						instructions: "Create a slider.",
+					}}
 				/>
 			)}
 		</div>
