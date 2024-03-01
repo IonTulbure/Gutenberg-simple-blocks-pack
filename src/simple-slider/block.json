@@ -7,6 +7,12 @@
 	"category": "mcx-gsbp-gutenberg-blocks",
 	"icon": "slides",
 	"description": "A simple slider with horizontal or vertical layout.",
+	"attributes": {
+        "images": {
+            "type": "array",
+            "default": []
+		}
+	},
 	"example": {
 		"attributes": {
 			"preview" : true
