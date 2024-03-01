@@ -21,6 +21,7 @@
 	},
 	"dependencies": {
 		"@wordpress/block-editor": "^12.20.0",
+		"@wordpress/components": "^27.0.0",
 		"@wordpress/icons": "^9.43.0",
 		"swiper": "^11.0.6"
 	}
