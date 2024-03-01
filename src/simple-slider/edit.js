@@ -13,6 +13,7 @@ import { __ } from "@wordpress/i18n";
  */
 import { useBlockProps, MediaPlaceholder } from "@wordpress/block-editor";
 import { Icon, trash } from "@wordpress/icons";
+import { BlockIcon } from "@wordpress/block-editor";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -38,47 +39,20 @@ import "./editor.scss";
 	);
 } */
 
-export default function Edit({ attributes, setAttributes }) {
-	const { imageID, imageURL } = attributes;
-
+export default function Edit(props) {
 	return (
-		<div {...useBlockProps()}>
-			{/*<p { ...useBlockProps() }>
-			{ __( 'Horizontal & vertical slider.', 'gutenberg-simple-blocks-pack' ) }
-		</p>
-		*/}
-			{!!imageID && !!imageURL ? (
-				<div className="slide-image-container">
-					<img src={imageURL} />
-					<Icon
-						className="trash-icon"
-						size={32}
-						icon={trash}
-						onClick={() => setAttributes({ imageURL: null, imageID: null })}
-					/>
-				</div>
-			) : (
+		<>
+			<div {...useBlockProps()}>
 				<MediaPlaceholder
-					onSelect={(selectedImage) => {
-						setAttributes({
-							imageURL: selectedImage.url,
-							imageID: selectedImage.id,
-						});
-					}}
-					/* 					onSelect = {
-						( el ) => {
-							setAttributes( { imageURL: el.url } );
-						}
-					} */
-					allowedTypes={["image"]}
 					multiple
 					gallery
+					icon={<BlockIcon icon="format-gallery" />}
 					labels={{
-						title: "Pick an Image",
-						instructions: "Create a slider.",
+						title: "Simple Slider",
+						instructions: "Create an awesome scrollable gallery.",
 					}}
 				/>
-			)}
-		</div>
+			</div>
+		</>
 	);
 }
