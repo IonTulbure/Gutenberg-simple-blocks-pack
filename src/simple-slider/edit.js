@@ -55,7 +55,7 @@ export default function Edit(props) {
 
 	return (
 		<div {...useBlockProps()}>
-			{__("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack")}
+			{__("Simple slider", "gutenberg-simple-blocks-pack")}
 
 			{/* Block controls */}
 			<BlockControls>
@@ -72,7 +72,7 @@ export default function Edit(props) {
 							value={props.attributes.images.map((image) => image.id)}
 							render={({ open }) => (
 								<ToolbarButton onClick={open}>
-									{__("Edit Gallery", "scrollable-gallery")}
+									{__("Edit Slider", "gutenberg-simple-blocks-pack")}
 								</ToolbarButton>
 							)}
 						/>
@@ -82,7 +82,7 @@ export default function Edit(props) {
 
 			{/* Display images if any exist */}
 			{hasImages && (
-				<figure className="scrollable-gallery-inner-container">
+				<figure className="simple-slider-inner-container">
 					{props.attributes.images.map((image, index) => (
 						<img key={index} src={image.url} />
 					))}
