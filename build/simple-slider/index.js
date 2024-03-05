@@ -39,6 +39,9 @@ __webpack_require__.r(__webpack_exports__);
 // Import useBlockProps & MediaPlaceholder components
 
 
+// Import BlockControls component
+
+
 
 
 // Import ToolbarButton & ToolbarGroup components

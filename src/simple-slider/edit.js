@@ -15,6 +15,9 @@ import { __ } from "@wordpress/i18n";
 // Import useBlockProps & MediaPlaceholder components
 import { useBlockProps, MediaPlaceholder } from "@wordpress/block-editor";
 
+// Import BlockControls component
+import { BlockControls } from "@wordpress/block-editor";
+
 import { BlockIcon } from "@wordpress/block-editor";
 
 import { Dashicon } from '@wordpress/components';
