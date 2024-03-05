@@ -11,9 +11,14 @@ import { __ } from "@wordpress/i18n";
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
+
 import { useBlockProps, MediaPlaceholder } from "@wordpress/block-editor";
-import { Icon, trash } from "@wordpress/icons";
+
 import { BlockIcon } from "@wordpress/block-editor";
+
+import { Dashicon } from '@wordpress/components';
+
+// import { Icon, trash } from "@wordpress/icons";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,28 +36,26 @@ import "./editor.scss";
  *
  * @return {Element} Element to render.
  */
-/* export default function Edit() {
-	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Horizontal &amp; vertical slider. – hello from the editor!', 'gutenberg-simple-blocks-pack' ) }
-		</p>
-	);
-} */
+
+const icon = "format-gallery";
+const MyBlockIcon = () => <BlockIcon icon={ icon } />;
 
 export default function Edit(props) {
 	return (
-		<>
-			<div {...useBlockProps()}>
-				<MediaPlaceholder
-					multiple
-					gallery
-					icon={<BlockIcon icon="format-gallery" />}
-					labels={{
-						title: "Simple Slider",
-						instructions: "Create an awesome scrollable gallery.",
-					}}
-				/>
-			</div>
-		</>
+		<div {...useBlockProps()}>
+			{__(
+				"Horizontal & vertical slider.",
+				"gutenberg-simple-blocks-pack",
+			)}
+
+			<MediaPlaceholder
+				icon={<MyBlockIcon />}
+				labels={{
+					title: "Simple Slider",
+					instructions: "Create an awesome scrollable gallery.",
+				}}
+				onSelect={(newImages) => props.setAttributes({ images: newImages })}
+			/>
+		</div>
 	);
 }
