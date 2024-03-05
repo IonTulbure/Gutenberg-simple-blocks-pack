@@ -55,7 +55,7 @@ export default function Edit(props) {
 
 	return (
 		<div {...useBlockProps()}>
-			{__("Simple slider", "gutenberg-simple-blocks-pack")}
+			{__("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack")}
 
 			{/* Block controls */}
 			<BlockControls>
@@ -82,7 +82,7 @@ export default function Edit(props) {
 
 			{/* Display images if any exist */}
 			{hasImages && (
-				<figure className="simple-slider-inner-container">
+				<figure className="simple-hv-slider-inner-container">
 					{props.attributes.images.map((image, index) => (
 						<img key={index} src={image.url} />
 					))}
@@ -96,7 +96,7 @@ export default function Edit(props) {
 					gallery
 					icon={<BlockIcon icon="format-gallery" />}
 					labels={{
-						title: "Simple slider",
+						title: "Horizontal & vertical slider.",
 						instructions: "Create an awesome simple slider.",
 					}}
 					onSelect={(newImages) => props.setAttributes({ images: newImages })}
