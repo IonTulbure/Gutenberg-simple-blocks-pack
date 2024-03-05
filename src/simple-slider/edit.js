@@ -20,7 +20,7 @@ import { BlockControls } from "@wordpress/block-editor";
 
 import { BlockIcon } from "@wordpress/block-editor";
 
-import { Dashicon } from '@wordpress/components';
+import { Dashicon } from "@wordpress/components";
 
 // Import ToolbarButton & ToolbarGroup components
 import { ToolbarButton, ToolbarGroup } from "@wordpress/components";
@@ -48,15 +48,14 @@ import "./editor.scss";
  */
 
 const icon = "format-gallery";
-const MyBlockIcon = () => <BlockIcon icon={ icon } />;
+const MyBlockIcon = () => <BlockIcon icon={icon} />;
 
 export default function Edit(props) {
+	const hasImages = props.attributes.images.length > 0;
+
 	return (
 		<div {...useBlockProps()}>
-			{__(
-				"Horizontal & vertical slider.",
-				"gutenberg-simple-blocks-pack",
-			)}
+			{__("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack")}
 
 			<MediaPlaceholder
 				icon={<MyBlockIcon />}
