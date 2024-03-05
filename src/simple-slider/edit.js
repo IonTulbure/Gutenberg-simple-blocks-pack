@@ -22,6 +22,9 @@ import { Dashicon } from '@wordpress/components';
 // Import ToolbarButton & ToolbarGroup components
 import { ToolbarButton, ToolbarGroup } from "@wordpress/components";
 
+// Import MediaUpload & MediaUploadCheck components
+import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
+
 // import { Icon, trash } from "@wordpress/icons";
 
 /**
