@@ -88,7 +88,7 @@ export default function Edit(props) {
 			{hasImages && (
 				<figure className="simple-hv-slider-inner-container">
 					{props.attributes.images.map((image, index) => (
-						<img key={index} src={image.url} />
+						<img key={index} src={image.url} alt={image.alt} />
 					))}
 				</figure>
 			)}
