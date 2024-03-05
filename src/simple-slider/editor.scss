@@ -5,9 +5,11 @@
  */
 
 .wp-block-mcx-simple-slider {
-	
-	img {
-		height: auto;
-		max-width: 100%;
+
+	.simple-hv-slider-inner-container {
+		img {
+			height: auto;
+			max-width: 200px;
+		}
 	}
 }

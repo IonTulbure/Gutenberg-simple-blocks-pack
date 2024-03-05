@@ -6,9 +6,9 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-mcx-simple-slider img {
+.wp-block-mcx-simple-slider .simple-hv-slider-inner-container img {
   height: auto;
-  max-width: 100%;
+  max-width: 200px;
 }
 
 /*# sourceMappingURL=index.css.map*/
