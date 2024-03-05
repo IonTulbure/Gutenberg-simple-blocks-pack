@@ -49,15 +49,18 @@ import "./editor.scss";
  */
 
 // gallery icon for MediaPlaceholder block
-const MediaPlaceholderBlockIcon = () => <BlockIcon icon={ gallery } />;
+const MediaPlaceholderBlockIcon = () => <BlockIcon icon={gallery} />;
+
+// block title
+/* const BlockTitle = () => {
+	__("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack");
+}; */
 
 export default function Edit(props) {
 	const hasImages = props.attributes.images.length > 0;
 
 	return (
 		<div {...useBlockProps()}>
-			{__("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack")}
-
 			{/* Block controls */}
 			<BlockControls>
 				<ToolbarGroup>
