@@ -12,6 +12,7 @@ import { __ } from "@wordpress/i18n";
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 
+// Import useBlockProps & MediaPlaceholder components
 import { useBlockProps, MediaPlaceholder } from "@wordpress/block-editor";
 
 import { BlockIcon } from "@wordpress/block-editor";
