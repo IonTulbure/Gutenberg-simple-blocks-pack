@@ -19,6 +19,9 @@ import { BlockIcon } from "@wordpress/block-editor";
 
 import { Dashicon } from '@wordpress/components';
 
+// Import ToolbarButton & ToolbarGroup components
+import { ToolbarButton, ToolbarGroup } from "@wordpress/components";
+
 // import { Icon, trash } from "@wordpress/icons";
 
 /**
