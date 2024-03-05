@@ -28,7 +28,8 @@
 			"padding": true,
 			"margin": true
 		},
-		"anchor": true
+		"anchor": true,
+		"align": true
 	},
 	"textdomain": "simple-slider",
 	"editorScript": "file:./index.js",
