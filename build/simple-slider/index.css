@@ -6,6 +6,11 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-mcx-simple-slider .simple-hv-slider-inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .wp-block-mcx-simple-slider .simple-hv-slider-inner-container img {
   height: auto;
   max-width: 200px;
