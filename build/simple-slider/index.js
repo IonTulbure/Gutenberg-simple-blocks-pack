@@ -77,11 +77,20 @@ function Edit(props) {
   const hasImages = props.attributes.images.length > 0;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
-    icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(MyBlockIcon, null),
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack"), hasImages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
+    className: "scrollable-gallery-inner-container"
+  }, props.attributes.images.map((image, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    key: index,
+    src: image.url
+  }))), !hasImages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
+    multiple: true,
+    gallery: true,
+    icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockIcon, {
+      icon: "format-gallery"
+    }),
     labels: {
-      title: "Simple Slider",
-      instructions: "Create an awesome scrollable gallery."
+      title: "Simple slider",
+      instructions: "Create an awesome simple slider."
     },
     onSelect: newImages => props.setAttributes({
       images: newImages

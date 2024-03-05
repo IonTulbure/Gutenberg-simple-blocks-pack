@@ -57,14 +57,25 @@ export default function Edit(props) {
 		<div {...useBlockProps()}>
 			{__("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack")}
 
-			<MediaPlaceholder
-				icon={<MyBlockIcon />}
-				labels={{
-					title: "Simple Slider",
-					instructions: "Create an awesome scrollable gallery.",
-				}}
-				onSelect={(newImages) => props.setAttributes({ images: newImages })}
-			/>
+			{hasImages && (
+				<figure className="scrollable-gallery-inner-container">
+					{props.attributes.images.map((image, index) => (
+						<img key={index} src={image.url} />
+					))}
+				</figure>
+			)}
+			{!hasImages && (
+				<MediaPlaceholder
+					multiple
+					gallery
+					icon={<BlockIcon icon="format-gallery" />}
+					labels={{
+						title: "Simple slider",
+						instructions: "Create an awesome simple slider.",
+					}}
+					onSelect={(newImages) => props.setAttributes({ images: newImages })}
+				/>
+			)}
 		</div>
 	);
 }
