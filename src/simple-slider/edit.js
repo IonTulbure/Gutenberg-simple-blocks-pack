@@ -57,6 +57,28 @@ export default function Edit(props) {
 		<div {...useBlockProps()}>
 			{__("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack")}
 
+			<BlockControls>
+				<ToolbarGroup>
+					<MediaUploadCheck>
+						<MediaUpload
+							multiple
+							gallery
+							addToGallery={true}
+							onSelect={(newImages) =>
+								props.setAttributes({ images: newImages })
+							}
+							allowedTypes={["image"]}
+							value={props.attributes.images.map((image) => image.id)}
+							render={({ open }) => (
+								<ToolbarButton onClick={open}>
+									{__("Edit Gallery", "scrollable-gallery")}
+								</ToolbarButton>
+							)}
+						/>
+					</MediaUploadCheck>
+				</ToolbarGroup>
+			</BlockControls>
+
 			{hasImages && (
 				<figure className="scrollable-gallery-inner-container">
 					{props.attributes.images.map((image, index) => (
