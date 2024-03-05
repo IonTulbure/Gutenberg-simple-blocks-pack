@@ -57,6 +57,7 @@ export default function Edit(props) {
 		<div {...useBlockProps()}>
 			{__("Horizontal & vertical slider.", "gutenberg-simple-blocks-pack")}
 
+			{/* Block controls */}
 			<BlockControls>
 				<ToolbarGroup>
 					<MediaUploadCheck>
@@ -79,6 +80,7 @@ export default function Edit(props) {
 				</ToolbarGroup>
 			</BlockControls>
 
+			{/* Display images if any exist */}
 			{hasImages && (
 				<figure className="scrollable-gallery-inner-container">
 					{props.attributes.images.map((image, index) => (
@@ -86,6 +88,8 @@ export default function Edit(props) {
 					))}
 				</figure>
 			)}
+
+			{/* If gallery has no images display MediaPlaceholder */}
 			{!hasImages && (
 				<MediaPlaceholder
 					multiple
