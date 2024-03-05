@@ -28,7 +28,8 @@ import { ToolbarButton, ToolbarGroup } from "@wordpress/components";
 // Import MediaUpload & MediaUploadCheck components
 import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
 
-// import { Icon, trash } from "@wordpress/icons";
+// Import gallery icon
+import { gallery } from "@wordpress/icons";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -47,8 +48,8 @@ import "./editor.scss";
  * @return {Element} Element to render.
  */
 
-const icon = "format-gallery";
-const MyBlockIcon = () => <BlockIcon icon={icon} />;
+// gallery icon for MediaPlaceholder block
+const MediaPlaceholderBlockIcon = () => <BlockIcon icon={ gallery } />;
 
 export default function Edit(props) {
 	const hasImages = props.attributes.images.length > 0;
@@ -94,7 +95,7 @@ export default function Edit(props) {
 				<MediaPlaceholder
 					multiple
 					gallery
-					icon={<BlockIcon icon="format-gallery" />}
+					icon={<MediaPlaceholderBlockIcon />}
 					labels={{
 						title: "Horizontal & vertical slider.",
 						instructions: "Create an awesome simple slider.",
