@@ -23,7 +23,8 @@
     "color": {
       "background": true,
       "text": true
-    }
+    },
+    "align": true
   },
   "textdomain": "simple-slider",
   "editorScript": "file:./index.js",
