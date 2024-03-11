@@ -63,57 +63,65 @@ export default function Edit(props) {
 	const hasImages = props.attributes.images.length > 0;
 
 	return (
-		<div {...useBlockProps()}>
-			{/* Block controls */}
-			<BlockControls>
-				<ToolbarGroup>
-					<MediaUploadCheck>
-						<MediaUpload
-							multiple
-							gallery
-							addToGallery={true}
-							onSelect={(newImages) =>
-								props.setAttributes({ images: newImages })
-							}
-							allowedTypes={["image"]}
-							value={props.attributes.images.map((image) => image.id)}
-							render={({ open }) => (
-								<ToolbarButton onClick={open}>
-									{__("Edit Slider", "gutenberg-simple-blocks-pack")}
-								</ToolbarButton>
-							)}
-						/>
-					</MediaUploadCheck>
-				</ToolbarGroup>
-			</BlockControls>
+		<>
+			{/* Inspector controls */}
+			<InspectorControls>
+				<PanelBody title={__("Settings", "gutenberg-simple-blocks-pack")}>
+					Testing
+				</PanelBody>
+			</InspectorControls>
+			<div {...useBlockProps()}>
+				{/* Block controls */}
+				<BlockControls>
+					<ToolbarGroup>
+						<MediaUploadCheck>
+							<MediaUpload
+								multiple
+								gallery
+								addToGallery={true}
+								onSelect={(newImages) =>
+									props.setAttributes({ images: newImages })
+								}
+								allowedTypes={["image"]}
+								value={props.attributes.images.map((image) => image.id)}
+								render={({ open }) => (
+									<ToolbarButton onClick={open}>
+										{__("Edit Slider", "gutenberg-simple-blocks-pack")}
+									</ToolbarButton>
+								)}
+							/>
+						</MediaUploadCheck>
+					</ToolbarGroup>
+				</BlockControls>
 
-			{/* Display images if any exist */}
-			{hasImages && (
-				<figure className="simple-hv-slider-inner-container">
-					{props.attributes.images.map((image, index) => (
-						<img
-							key={index}
-							src={image.url}
-							alt={image.alt}
-							title={image.title}
-						/>
-					))}
-				</figure>
-			)}
+				{/* Display images if any exist */}
+				{hasImages && (
+					<figure className="simple-hv-slider-inner-container">
+						{props.attributes.images.map((image, index) => (
+							<img
+								key={index}
+								src={image.url}
+								alt={image.alt}
+								title={image.title}
+							/>
+						))}
+					</figure>
+				)}
 
-			{/* If gallery has no images display MediaPlaceholder */}
-			{!hasImages && (
-				<MediaPlaceholder
-					multiple
-					gallery
-					icon={<MediaPlaceholderBlockIcon />}
-					labels={{
-						title: "Horizontal & vertical slider.",
-						instructions: "Create an awesome simple slider.",
-					}}
-					onSelect={(newImages) => props.setAttributes({ images: newImages })}
-				/>
-			)}
-		</div>
+				{/* If gallery has no images display MediaPlaceholder */}
+				{!hasImages && (
+					<MediaPlaceholder
+						multiple
+						gallery
+						icon={<MediaPlaceholderBlockIcon />}
+						labels={{
+							title: "Horizontal & vertical slider.",
+							instructions: "Create an awesome simple slider.",
+						}}
+						onSelect={(newImages) => props.setAttributes({ images: newImages })}
+					/>
+				)}
+			</div>
+		</>
 	);
 }
