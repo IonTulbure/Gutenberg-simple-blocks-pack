@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -13,23 +13,23 @@ import { __ } from "@wordpress/i18n";
  */
 
 // Import useBlockProps & MediaPlaceholder components
-import { useBlockProps, MediaPlaceholder } from "@wordpress/block-editor";
+import { useBlockProps, MediaPlaceholder } from '@wordpress/block-editor';
 
 // Import BlockControls component
-import { BlockControls } from "@wordpress/block-editor";
+import { BlockControls } from '@wordpress/block-editor';
 
-import { BlockIcon } from "@wordpress/block-editor";
+import { BlockIcon } from '@wordpress/block-editor';
 
-import { Dashicon } from "@wordpress/components";
+import { Dashicon } from '@wordpress/components';
 
 // Import ToolbarButton & ToolbarGroup components
-import { ToolbarButton, ToolbarGroup } from "@wordpress/components";
+import { ToolbarButton, ToolbarGroup } from '@wordpress/components';
 
 // Import MediaUpload & MediaUploadCheck components
-import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
+import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
 // Import gallery icon
-import { gallery } from "@wordpress/icons";
+import { gallery } from '@wordpress/icons';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -37,7 +37,7 @@ import { gallery } from "@wordpress/icons";
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import "./editor.scss";
+import './editor.scss';
 
 /**
  * The edit function describes the structure of your block in the context of the
