@@ -12,8 +12,8 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 
-// Import useBlockProps & MediaPlaceholder components
-import { useBlockProps, MediaPlaceholder } from '@wordpress/block-editor';
+// Import useBlockProps, MediaPlaceholder, InspectorControls components
+import { useBlockProps, MediaPlaceholder, InspectorControls } from '@wordpress/block-editor';
 
 // Import BlockControls component
 import { BlockControls } from '@wordpress/block-editor';

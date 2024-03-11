@@ -70,7 +70,7 @@ __webpack_require__.r(__webpack_exports__);
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 
-// Import useBlockProps & MediaPlaceholder components
+// Import useBlockProps, MediaPlaceholder, InspectorControls components
 
 
 // Import BlockControls component
