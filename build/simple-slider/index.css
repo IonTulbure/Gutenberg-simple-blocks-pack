@@ -18,5 +18,8 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.wp-block-mcx-simple-slider .simple-hv-slider-inner-container figcaption {
+  text-align: center;
+}
 
 /*# sourceMappingURL=index.css.map*/
