@@ -15,10 +15,22 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save(props) {
 	return (
 		<p {...useBlockProps.save()}>
-			{'Horizontal & vertical slider.'}
+			<figure className="simple-hv-slider-inner-container">
+				{props.attributes.images.map((image, index) => (
+					<figure>
+						<img
+							key={index}
+							src={image.url}
+							alt={image.alt}
+							title={image.title}
+						/>
+						<figcaption>{image.caption}</figcaption>
+					</figure>
+				))}
+			</figure>
 		</p>
 	);
 }

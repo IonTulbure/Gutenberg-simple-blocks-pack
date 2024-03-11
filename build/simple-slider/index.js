@@ -259,10 +259,17 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {Element} Element to render.
  */
-function save() {
+function save(props) {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, 'Horizontal & vertical slider.');
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
+    className: "simple-hv-slider-inner-container"
+  }, props.attributes.images.map((image, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    key: index,
+    src: image.url,
+    alt: image.alt,
+    title: image.title
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figcaption", null, image.caption)))));
 }
 
 /***/ }),
