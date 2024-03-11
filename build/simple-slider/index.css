@@ -13,8 +13,10 @@
   grid-gap: 10px;
 }
 .wp-block-mcx-simple-slider .simple-hv-slider-inner-container img {
-  height: auto;
-  max-width: 200px;
+  height: 150px;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /*# sourceMappingURL=index.css.map*/

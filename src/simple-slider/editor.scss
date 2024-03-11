@@ -12,8 +12,9 @@
 		grid-gap: 10px;
 
 		img {
-			height: auto;
-			max-width: 200px;
+			height: 150px;
+			width: 200px;
+			object-fit: cover;
 		}
 	}
 }
