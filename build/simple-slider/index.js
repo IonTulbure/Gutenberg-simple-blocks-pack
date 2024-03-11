@@ -139,12 +139,12 @@ function Edit(props) {
     }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Edit Slider", "gutenberg-simple-blocks-pack"))
   })))), hasImages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
     className: "simple-hv-slider-inner-container"
-  }, props.attributes.images.map((image, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+  }, props.attributes.images.map((image, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     key: index,
     src: image.url,
     alt: image.alt,
     title: image.title
-  }))), !hasImages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figcaption", null, image.caption)))), !hasImages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
     multiple: true,
     gallery: true,
     icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(MediaPlaceholderBlockIcon, null),
