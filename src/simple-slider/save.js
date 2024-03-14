@@ -18,19 +18,25 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function save(props) {
 	return (
 		<p {...useBlockProps.save()}>
-			<figure className="simple-hv-slider-inner-container">
-				{props.attributes.images.map((image, index) => (
-					<figure>
-						<img
-							key={index}
-							src={image.url}
-							alt={image.alt}
-							title={image.title}
-						/>
-						<figcaption>{image.caption}</figcaption>
-					</figure>
-				))}
-			</figure>
+			<>
+				<figure className="simple-hv-slider-inner-container splide">
+					<div class="splide__track">
+						<ul class="splide__list">
+							{props.attributes.images.map((image, index) => (
+								<figure class="splide__slide">
+									<img
+										key={index}
+										src={image.url}
+										alt={image.alt}
+										title={image.title}
+									/>
+									<figcaption>{image.caption}</figcaption>
+								</figure>
+							))}
+						</ul>
+					</div>
+				</figure>
+			</>
 		</p>
 	);
 }
