@@ -53,8 +53,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/gallery.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/simple-slider/editor.scss");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/gallery.js");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/swiper-react.mjs");
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.css");
+/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation.css");
+/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination.css");
+/* harmony import */ var swiper_css_scrollbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! swiper/css/scrollbar */ "./node_modules/swiper/modules/scrollbar.css");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./editor.scss */ "./src/simple-slider/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -90,6 +96,14 @@ __webpack_require__.r(__webpack_exports__);
 // Import gallery icon
 
 
+
+
+// Import Swiper styles
+
+
+
+
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -109,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // gallery icon for MediaPlaceholder block
 const MediaPlaceholderBlockIcon = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockIcon, {
-  icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"]
+  icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__["default"]
 });
 
 // block title
@@ -137,20 +151,31 @@ function Edit(props) {
     }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarButton, {
       onClick: open
     }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Edit Slider", "gutenberg-simple-blocks-pack"))
-  })))), hasImages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    className: "simple-hv-slider-inner-container splide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "splide__track"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    class: "splide__list"
-  }, props.attributes.images.map((image, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    class: "splide__slide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+  })))), hasImages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.Swiper
+  // install Swiper modules
+  , {
+    modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_4__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_4__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_4__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_4__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_4__.A11y],
+    autoplay: {
+      delay: 2000
+    },
+    loop: true,
+    spaceBetween: 50,
+    slidesPerView: 1,
+    navigation: true,
+    pagination: {
+      clickable: true
+    },
+    scrollbar: {
+      draggable: true
+    },
+    onSwiper: swiper => console.log(swiper),
+    onSlideChange: () => console.log('slide change')
+  }, props.attributes.images.map((image, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(swiper_react__WEBPACK_IMPORTED_MODULE_5__.SwiperSlide, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     key: index,
     src: image.url,
     alt: image.alt,
     title: image.title
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figcaption", null, image.caption))))))), !hasImages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figcaption", null, image.caption)))))), !hasImages && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
     multiple: true,
     gallery: true,
     icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(MediaPlaceholderBlockIcon, null),
@@ -247,6 +272,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var swiper_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/react */ "./node_modules/swiper/swiper-react.mjs");
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.css");
+/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation.css");
+/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination.css");
+/* harmony import */ var swiper_css_scrollbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/css/scrollbar */ "./node_modules/swiper/modules/scrollbar.css");
 
 /* /**
  * React hook that is used to mark the block wrapper element.
@@ -254,6 +285,14 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
+
+
+
+
+// Import Swiper styles
+
+
+
 
 
 /**
@@ -266,23 +305,70 @@ __webpack_require__.r(__webpack_exports__);
  * @return {Element} Element to render.
  */
 function save(props) {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    className: "simple-hv-slider-inner-container splide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "splide__track"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    class: "splide__list"
-  }, props.attributes.images.map((image, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    class: "splide__slide"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+  let blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
+    className: "swiper"
+  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "swiper-wrapper"
+  }, props.attributes.images.map((image, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "swiper-slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     key: index,
     src: image.url,
     alt: image.alt,
     title: image.title
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figcaption", null, image.caption))))))));
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figcaption", null, image.caption)))))));
 }
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/navigation.css":
+/*!****************************************************!*\
+  !*** ./node_modules/swiper/modules/navigation.css ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/pagination.css":
+/*!****************************************************!*\
+  !*** ./node_modules/swiper/modules/pagination.css ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/modules/scrollbar.css":
+/*!***************************************************!*\
+  !*** ./node_modules/swiper/modules/scrollbar.css ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/swiper.css":
+/*!****************************************!*\
+  !*** ./node_modules/swiper/swiper.css ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -10309,6 +10395,414 @@ Swiper.use([Resize, Observer]);
 
 /***/ }),
 
+/***/ "./node_modules/swiper/shared/update-on-virtual-data.mjs":
+/*!***************************************************************!*\
+  !*** ./node_modules/swiper/shared/update-on-virtual-data.mjs ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   a: () => (/* binding */ getChangedParams),
+/* harmony export */   g: () => (/* binding */ getParams),
+/* harmony export */   m: () => (/* binding */ mountSwiper),
+/* harmony export */   u: () => (/* binding */ updateOnVirtualData)
+/* harmony export */ });
+/* harmony import */ var _update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update-swiper.mjs */ "./node_modules/swiper/shared/update-swiper.mjs");
+/* harmony import */ var _swiper_core_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./swiper-core.mjs */ "./node_modules/swiper/shared/swiper-core.mjs");
+
+
+
+function getParams(obj, splitEvents) {
+  if (obj === void 0) {
+    obj = {};
+  }
+  if (splitEvents === void 0) {
+    splitEvents = true;
+  }
+  const params = {
+    on: {}
+  };
+  const events = {};
+  const passedParams = {};
+  (0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.e)(params, _swiper_core_mjs__WEBPACK_IMPORTED_MODULE_1__.d);
+  params._emitClasses = true;
+  params.init = false;
+  const rest = {};
+  const allowedParams = _update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.p.map(key => key.replace(/_/, ''));
+  const plainObj = Object.assign({}, obj);
+  Object.keys(plainObj).forEach(key => {
+    if (typeof obj[key] === 'undefined') return;
+    if (allowedParams.indexOf(key) >= 0) {
+      if ((0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.i)(obj[key])) {
+        params[key] = {};
+        passedParams[key] = {};
+        (0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.e)(params[key], obj[key]);
+        (0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.e)(passedParams[key], obj[key]);
+      } else {
+        params[key] = obj[key];
+        passedParams[key] = obj[key];
+      }
+    } else if (key.search(/on[A-Z]/) === 0 && typeof obj[key] === 'function') {
+      if (splitEvents) {
+        events[`${key[2].toLowerCase()}${key.substr(3)}`] = obj[key];
+      } else {
+        params.on[`${key[2].toLowerCase()}${key.substr(3)}`] = obj[key];
+      }
+    } else {
+      rest[key] = obj[key];
+    }
+  });
+  ['navigation', 'pagination', 'scrollbar'].forEach(key => {
+    if (params[key] === true) params[key] = {};
+    if (params[key] === false) delete params[key];
+  });
+  return {
+    params,
+    passedParams,
+    rest,
+    events
+  };
+}
+
+function mountSwiper(_ref, swiperParams) {
+  let {
+    el,
+    nextEl,
+    prevEl,
+    paginationEl,
+    scrollbarEl,
+    swiper
+  } = _ref;
+  if ((0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.n)(swiperParams) && nextEl && prevEl) {
+    swiper.params.navigation.nextEl = nextEl;
+    swiper.originalParams.navigation.nextEl = nextEl;
+    swiper.params.navigation.prevEl = prevEl;
+    swiper.originalParams.navigation.prevEl = prevEl;
+  }
+  if ((0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.a)(swiperParams) && paginationEl) {
+    swiper.params.pagination.el = paginationEl;
+    swiper.originalParams.pagination.el = paginationEl;
+  }
+  if ((0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.b)(swiperParams) && scrollbarEl) {
+    swiper.params.scrollbar.el = scrollbarEl;
+    swiper.originalParams.scrollbar.el = scrollbarEl;
+  }
+  swiper.init(el);
+}
+
+function getChangedParams(swiperParams, oldParams, children, oldChildren, getKey) {
+  const keys = [];
+  if (!oldParams) return keys;
+  const addKey = key => {
+    if (keys.indexOf(key) < 0) keys.push(key);
+  };
+  if (children && oldChildren) {
+    const oldChildrenKeys = oldChildren.map(getKey);
+    const childrenKeys = children.map(getKey);
+    if (oldChildrenKeys.join('') !== childrenKeys.join('')) addKey('children');
+    if (oldChildren.length !== children.length) addKey('children');
+  }
+  const watchParams = _update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.p.filter(key => key[0] === '_').map(key => key.replace(/_/, ''));
+  watchParams.forEach(key => {
+    if (key in swiperParams && key in oldParams) {
+      if ((0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.i)(swiperParams[key]) && (0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.i)(oldParams[key])) {
+        const newKeys = Object.keys(swiperParams[key]);
+        const oldKeys = Object.keys(oldParams[key]);
+        if (newKeys.length !== oldKeys.length) {
+          addKey(key);
+        } else {
+          newKeys.forEach(newKey => {
+            if (swiperParams[key][newKey] !== oldParams[key][newKey]) {
+              addKey(key);
+            }
+          });
+          oldKeys.forEach(oldKey => {
+            if (swiperParams[key][oldKey] !== oldParams[key][oldKey]) addKey(key);
+          });
+        }
+      } else if (swiperParams[key] !== oldParams[key]) {
+        addKey(key);
+      }
+    }
+  });
+  return keys;
+}
+
+const updateOnVirtualData = swiper => {
+  if (!swiper || swiper.destroyed || !swiper.params.virtual || swiper.params.virtual && !swiper.params.virtual.enabled) return;
+  swiper.updateSlides();
+  swiper.updateProgress();
+  swiper.updateSlidesClasses();
+  if (swiper.parallax && swiper.params.parallax && swiper.params.parallax.enabled) {
+    swiper.parallax.setTranslate();
+  }
+};
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/shared/update-swiper.mjs":
+/*!******************************************************!*\
+  !*** ./node_modules/swiper/shared/update-swiper.mjs ***!
+  \******************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   a: () => (/* binding */ needsPagination),
+/* harmony export */   b: () => (/* binding */ needsScrollbar),
+/* harmony export */   c: () => (/* binding */ attrToProp),
+/* harmony export */   d: () => (/* binding */ uniqueClasses),
+/* harmony export */   e: () => (/* binding */ extend),
+/* harmony export */   i: () => (/* binding */ isObject),
+/* harmony export */   n: () => (/* binding */ needsNavigation),
+/* harmony export */   p: () => (/* binding */ paramsList),
+/* harmony export */   u: () => (/* binding */ updateSwiper),
+/* harmony export */   w: () => (/* binding */ wrapperClass)
+/* harmony export */ });
+/* underscore in name -> watch for changes */
+const paramsList = ['eventsPrefix', 'injectStyles', 'injectStylesUrls', 'modules', 'init', '_direction', 'oneWayMovement', 'swiperElementNodeName', 'touchEventsTarget', 'initialSlide', '_speed', 'cssMode', 'updateOnWindowResize', 'resizeObserver', 'nested', 'focusableElements', '_enabled', '_width', '_height', 'preventInteractionOnTransition', 'userAgent', 'url', '_edgeSwipeDetection', '_edgeSwipeThreshold', '_freeMode', '_autoHeight', 'setWrapperSize', 'virtualTranslate', '_effect', 'breakpoints', 'breakpointsBase', '_spaceBetween', '_slidesPerView', 'maxBackfaceHiddenSlides', '_grid', '_slidesPerGroup', '_slidesPerGroupSkip', '_slidesPerGroupAuto', '_centeredSlides', '_centeredSlidesBounds', '_slidesOffsetBefore', '_slidesOffsetAfter', 'normalizeSlideIndex', '_centerInsufficientSlides', '_watchOverflow', 'roundLengths', 'touchRatio', 'touchAngle', 'simulateTouch', '_shortSwipes', '_longSwipes', 'longSwipesRatio', 'longSwipesMs', '_followFinger', 'allowTouchMove', '_threshold', 'touchMoveStopPropagation', 'touchStartPreventDefault', 'touchStartForcePreventDefault', 'touchReleaseOnEdges', 'uniqueNavElements', '_resistance', '_resistanceRatio', '_watchSlidesProgress', '_grabCursor', 'preventClicks', 'preventClicksPropagation', '_slideToClickedSlide', '_loop', 'loopAdditionalSlides', 'loopAddBlankSlides', 'loopPreventsSliding', '_rewind', '_allowSlidePrev', '_allowSlideNext', '_swipeHandler', '_noSwiping', 'noSwipingClass', 'noSwipingSelector', 'passiveListeners', 'containerModifierClass', 'slideClass', 'slideActiveClass', 'slideVisibleClass', 'slideFullyVisibleClass', 'slideNextClass', 'slidePrevClass', 'slideBlankClass', 'wrapperClass', 'lazyPreloaderClass', 'lazyPreloadPrevNext', 'runCallbacksOnInit', 'observer', 'observeParents', 'observeSlideChildren',
+// modules
+'a11y', '_autoplay', '_controller', 'coverflowEffect', 'cubeEffect', 'fadeEffect', 'flipEffect', 'creativeEffect', 'cardsEffect', 'hashNavigation', 'history', 'keyboard', 'mousewheel', '_navigation', '_pagination', 'parallax', '_scrollbar', '_thumbs', 'virtual', 'zoom', 'control'];
+
+function isObject(o) {
+  return typeof o === 'object' && o !== null && o.constructor && Object.prototype.toString.call(o).slice(8, -1) === 'Object' && !o.__swiper__;
+}
+function extend(target, src) {
+  const noExtend = ['__proto__', 'constructor', 'prototype'];
+  Object.keys(src).filter(key => noExtend.indexOf(key) < 0).forEach(key => {
+    if (typeof target[key] === 'undefined') target[key] = src[key];else if (isObject(src[key]) && isObject(target[key]) && Object.keys(src[key]).length > 0) {
+      if (src[key].__swiper__) target[key] = src[key];else extend(target[key], src[key]);
+    } else {
+      target[key] = src[key];
+    }
+  });
+}
+function needsNavigation(params) {
+  if (params === void 0) {
+    params = {};
+  }
+  return params.navigation && typeof params.navigation.nextEl === 'undefined' && typeof params.navigation.prevEl === 'undefined';
+}
+function needsPagination(params) {
+  if (params === void 0) {
+    params = {};
+  }
+  return params.pagination && typeof params.pagination.el === 'undefined';
+}
+function needsScrollbar(params) {
+  if (params === void 0) {
+    params = {};
+  }
+  return params.scrollbar && typeof params.scrollbar.el === 'undefined';
+}
+function uniqueClasses(classNames) {
+  if (classNames === void 0) {
+    classNames = '';
+  }
+  const classes = classNames.split(' ').map(c => c.trim()).filter(c => !!c);
+  const unique = [];
+  classes.forEach(c => {
+    if (unique.indexOf(c) < 0) unique.push(c);
+  });
+  return unique.join(' ');
+}
+function attrToProp(attrName) {
+  if (attrName === void 0) {
+    attrName = '';
+  }
+  return attrName.replace(/-[a-z]/g, l => l.toUpperCase().replace('-', ''));
+}
+function wrapperClass(className) {
+  if (className === void 0) {
+    className = '';
+  }
+  if (!className) return 'swiper-wrapper';
+  if (!className.includes('swiper-wrapper')) return `swiper-wrapper ${className}`;
+  return className;
+}
+
+function updateSwiper(_ref) {
+  let {
+    swiper,
+    slides,
+    passedParams,
+    changedParams,
+    nextEl,
+    prevEl,
+    scrollbarEl,
+    paginationEl
+  } = _ref;
+  const updateParams = changedParams.filter(key => key !== 'children' && key !== 'direction' && key !== 'wrapperClass');
+  const {
+    params: currentParams,
+    pagination,
+    navigation,
+    scrollbar,
+    virtual,
+    thumbs
+  } = swiper;
+  let needThumbsInit;
+  let needControllerInit;
+  let needPaginationInit;
+  let needScrollbarInit;
+  let needNavigationInit;
+  let loopNeedDestroy;
+  let loopNeedEnable;
+  let loopNeedReloop;
+  if (changedParams.includes('thumbs') && passedParams.thumbs && passedParams.thumbs.swiper && currentParams.thumbs && !currentParams.thumbs.swiper) {
+    needThumbsInit = true;
+  }
+  if (changedParams.includes('controller') && passedParams.controller && passedParams.controller.control && currentParams.controller && !currentParams.controller.control) {
+    needControllerInit = true;
+  }
+  if (changedParams.includes('pagination') && passedParams.pagination && (passedParams.pagination.el || paginationEl) && (currentParams.pagination || currentParams.pagination === false) && pagination && !pagination.el) {
+    needPaginationInit = true;
+  }
+  if (changedParams.includes('scrollbar') && passedParams.scrollbar && (passedParams.scrollbar.el || scrollbarEl) && (currentParams.scrollbar || currentParams.scrollbar === false) && scrollbar && !scrollbar.el) {
+    needScrollbarInit = true;
+  }
+  if (changedParams.includes('navigation') && passedParams.navigation && (passedParams.navigation.prevEl || prevEl) && (passedParams.navigation.nextEl || nextEl) && (currentParams.navigation || currentParams.navigation === false) && navigation && !navigation.prevEl && !navigation.nextEl) {
+    needNavigationInit = true;
+  }
+  const destroyModule = mod => {
+    if (!swiper[mod]) return;
+    swiper[mod].destroy();
+    if (mod === 'navigation') {
+      if (swiper.isElement) {
+        swiper[mod].prevEl.remove();
+        swiper[mod].nextEl.remove();
+      }
+      currentParams[mod].prevEl = undefined;
+      currentParams[mod].nextEl = undefined;
+      swiper[mod].prevEl = undefined;
+      swiper[mod].nextEl = undefined;
+    } else {
+      if (swiper.isElement) {
+        swiper[mod].el.remove();
+      }
+      currentParams[mod].el = undefined;
+      swiper[mod].el = undefined;
+    }
+  };
+  if (changedParams.includes('loop') && swiper.isElement) {
+    if (currentParams.loop && !passedParams.loop) {
+      loopNeedDestroy = true;
+    } else if (!currentParams.loop && passedParams.loop) {
+      loopNeedEnable = true;
+    } else {
+      loopNeedReloop = true;
+    }
+  }
+  updateParams.forEach(key => {
+    if (isObject(currentParams[key]) && isObject(passedParams[key])) {
+      Object.assign(currentParams[key], passedParams[key]);
+      if ((key === 'navigation' || key === 'pagination' || key === 'scrollbar') && 'enabled' in passedParams[key] && !passedParams[key].enabled) {
+        destroyModule(key);
+      }
+    } else {
+      const newValue = passedParams[key];
+      if ((newValue === true || newValue === false) && (key === 'navigation' || key === 'pagination' || key === 'scrollbar')) {
+        if (newValue === false) {
+          destroyModule(key);
+        }
+      } else {
+        currentParams[key] = passedParams[key];
+      }
+    }
+  });
+  if (updateParams.includes('controller') && !needControllerInit && swiper.controller && swiper.controller.control && currentParams.controller && currentParams.controller.control) {
+    swiper.controller.control = currentParams.controller.control;
+  }
+  if (changedParams.includes('children') && slides && virtual && currentParams.virtual.enabled) {
+    virtual.slides = slides;
+    virtual.update(true);
+  } else if (changedParams.includes('virtual') && virtual && currentParams.virtual.enabled) {
+    if (slides) virtual.slides = slides;
+    virtual.update(true);
+  }
+  if (changedParams.includes('children') && slides && currentParams.loop) {
+    loopNeedReloop = true;
+  }
+  if (needThumbsInit) {
+    const initialized = thumbs.init();
+    if (initialized) thumbs.update(true);
+  }
+  if (needControllerInit) {
+    swiper.controller.control = currentParams.controller.control;
+  }
+  if (needPaginationInit) {
+    if (swiper.isElement && (!paginationEl || typeof paginationEl === 'string')) {
+      paginationEl = document.createElement('div');
+      paginationEl.classList.add('swiper-pagination');
+      paginationEl.part.add('pagination');
+      swiper.el.appendChild(paginationEl);
+    }
+    if (paginationEl) currentParams.pagination.el = paginationEl;
+    pagination.init();
+    pagination.render();
+    pagination.update();
+  }
+  if (needScrollbarInit) {
+    if (swiper.isElement && (!scrollbarEl || typeof scrollbarEl === 'string')) {
+      scrollbarEl = document.createElement('div');
+      scrollbarEl.classList.add('swiper-scrollbar');
+      scrollbarEl.part.add('scrollbar');
+      swiper.el.appendChild(scrollbarEl);
+    }
+    if (scrollbarEl) currentParams.scrollbar.el = scrollbarEl;
+    scrollbar.init();
+    scrollbar.updateSize();
+    scrollbar.setTranslate();
+  }
+  if (needNavigationInit) {
+    if (swiper.isElement) {
+      if (!nextEl || typeof nextEl === 'string') {
+        nextEl = document.createElement('div');
+        nextEl.classList.add('swiper-button-next');
+        nextEl.innerHTML = swiper.hostEl.constructor.nextButtonSvg;
+        nextEl.part.add('button-next');
+        swiper.el.appendChild(nextEl);
+      }
+      if (!prevEl || typeof prevEl === 'string') {
+        prevEl = document.createElement('div');
+        prevEl.classList.add('swiper-button-prev');
+        prevEl.innerHTML = swiper.hostEl.constructor.prevButtonSvg;
+        prevEl.part.add('button-prev');
+        swiper.el.appendChild(prevEl);
+      }
+    }
+    if (nextEl) currentParams.navigation.nextEl = nextEl;
+    if (prevEl) currentParams.navigation.prevEl = prevEl;
+    navigation.init();
+    navigation.update();
+  }
+  if (changedParams.includes('allowSlideNext')) {
+    swiper.allowSlideNext = passedParams.allowSlideNext;
+  }
+  if (changedParams.includes('allowSlidePrev')) {
+    swiper.allowSlidePrev = passedParams.allowSlidePrev;
+  }
+  if (changedParams.includes('direction')) {
+    swiper.changeDirection(passedParams.direction, false);
+  }
+  if (loopNeedDestroy || loopNeedReloop) {
+    swiper.loopDestroy();
+  }
+  if (loopNeedEnable || loopNeedReloop) {
+    swiper.loopCreate();
+  }
+  swiper.update();
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/swiper/shared/utils.mjs":
 /*!**********************************************!*\
   !*** ./node_modules/swiper/shared/utils.mjs ***!
@@ -10631,6 +11125,421 @@ function elementOuterSize(el, size, includeMargins) {
 function makeElementsArray(el) {
   return (Array.isArray(el) ? el : [el]).filter(e => !!e);
 }
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/swiper/swiper-react.mjs":
+/*!**********************************************!*\
+  !*** ./node_modules/swiper/swiper-react.mjs ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Swiper: () => (/* binding */ Swiper),
+/* harmony export */   SwiperSlide: () => (/* binding */ SwiperSlide),
+/* harmony export */   useSwiper: () => (/* binding */ useSwiper),
+/* harmony export */   useSwiperSlide: () => (/* binding */ useSwiperSlide)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/swiper-core.mjs */ "./node_modules/swiper/shared/swiper-core.mjs");
+/* harmony import */ var _shared_update_on_virtual_data_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/update-on-virtual-data.mjs */ "./node_modules/swiper/shared/update-on-virtual-data.mjs");
+/* harmony import */ var _shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/update-swiper.mjs */ "./node_modules/swiper/shared/update-swiper.mjs");
+/**
+ * Swiper React 11.0.7
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2024 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: February 27, 2024
+ */
+
+
+
+
+
+
+function _extends() {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+
+function isChildSwiperSlide(child) {
+  return child.type && child.type.displayName && child.type.displayName.includes('SwiperSlide');
+}
+function processChildren(c) {
+  const slides = [];
+  react__WEBPACK_IMPORTED_MODULE_0__.Children.toArray(c).forEach(child => {
+    if (isChildSwiperSlide(child)) {
+      slides.push(child);
+    } else if (child.props && child.props.children) {
+      processChildren(child.props.children).forEach(slide => slides.push(slide));
+    }
+  });
+  return slides;
+}
+function getChildren(c) {
+  const slides = [];
+  const slots = {
+    'container-start': [],
+    'container-end': [],
+    'wrapper-start': [],
+    'wrapper-end': []
+  };
+  react__WEBPACK_IMPORTED_MODULE_0__.Children.toArray(c).forEach(child => {
+    if (isChildSwiperSlide(child)) {
+      slides.push(child);
+    } else if (child.props && child.props.slot && slots[child.props.slot]) {
+      slots[child.props.slot].push(child);
+    } else if (child.props && child.props.children) {
+      const foundSlides = processChildren(child.props.children);
+      if (foundSlides.length > 0) {
+        foundSlides.forEach(slide => slides.push(slide));
+      } else {
+        slots['container-end'].push(child);
+      }
+    } else {
+      slots['container-end'].push(child);
+    }
+  });
+  return {
+    slides,
+    slots
+  };
+}
+
+function renderVirtual(swiper, slides, virtualData) {
+  if (!virtualData) return null;
+  const getSlideIndex = index => {
+    let slideIndex = index;
+    if (index < 0) {
+      slideIndex = slides.length + index;
+    } else if (slideIndex >= slides.length) {
+      // eslint-disable-next-line
+      slideIndex = slideIndex - slides.length;
+    }
+    return slideIndex;
+  };
+  const style = swiper.isHorizontal() ? {
+    [swiper.rtlTranslate ? 'right' : 'left']: `${virtualData.offset}px`
+  } : {
+    top: `${virtualData.offset}px`
+  };
+  const {
+    from,
+    to
+  } = virtualData;
+  const loopFrom = swiper.params.loop ? -slides.length : 0;
+  const loopTo = swiper.params.loop ? slides.length * 2 : slides.length;
+  const slidesToRender = [];
+  for (let i = loopFrom; i < loopTo; i += 1) {
+    if (i >= from && i <= to) {
+      slidesToRender.push(slides[getSlideIndex(i)]);
+    }
+  }
+  return slidesToRender.map((child, index) => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(child, {
+      swiper,
+      style,
+      key: child.props.virtualIndex || child.key || `slide-${index}`
+    });
+  });
+}
+
+function useIsomorphicLayoutEffect(callback, deps) {
+  // eslint-disable-next-line
+  if (typeof window === 'undefined') return (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(callback, deps);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect)(callback, deps);
+}
+
+const SwiperSlideContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const useSwiperSlide = () => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(SwiperSlideContext);
+};
+const SwiperContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const useSwiper = () => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(SwiperContext);
+};
+
+const Swiper = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function (_temp, externalElRef) {
+  let {
+    className,
+    tag: Tag = 'div',
+    wrapperTag: WrapperTag = 'div',
+    children,
+    onSwiper,
+    ...rest
+  } = _temp === void 0 ? {} : _temp;
+  let eventsAssigned = false;
+  const [containerClasses, setContainerClasses] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('swiper');
+  const [virtualData, setVirtualData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const [breakpointChanged, setBreakpointChanged] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const initializedRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+  const swiperElRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const swiperRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const oldPassedParamsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const oldSlides = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const nextElRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const prevElRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const paginationElRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const scrollbarElRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const {
+    params: swiperParams,
+    passedParams,
+    rest: restProps,
+    events
+  } = (0,_shared_update_on_virtual_data_mjs__WEBPACK_IMPORTED_MODULE_2__.g)(rest);
+  const {
+    slides,
+    slots
+  } = getChildren(children);
+  const onBeforeBreakpoint = () => {
+    setBreakpointChanged(!breakpointChanged);
+  };
+  Object.assign(swiperParams.on, {
+    _containerClasses(swiper, classes) {
+      setContainerClasses(classes);
+    }
+  });
+  const initSwiper = () => {
+    // init swiper
+    Object.assign(swiperParams.on, events);
+    eventsAssigned = true;
+    const passParams = {
+      ...swiperParams
+    };
+    delete passParams.wrapperClass;
+    swiperRef.current = new _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_1__.S(passParams);
+    if (swiperRef.current.virtual && swiperRef.current.params.virtual.enabled) {
+      swiperRef.current.virtual.slides = slides;
+      const extendWith = {
+        cache: false,
+        slides,
+        renderExternal: setVirtualData,
+        renderExternalUpdate: false
+      };
+      (0,_shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__.e)(swiperRef.current.params.virtual, extendWith);
+      (0,_shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__.e)(swiperRef.current.originalParams.virtual, extendWith);
+    }
+  };
+  if (!swiperElRef.current) {
+    initSwiper();
+  }
+
+  // Listen for breakpoints change
+  if (swiperRef.current) {
+    swiperRef.current.on('_beforeBreakpoint', onBeforeBreakpoint);
+  }
+  const attachEvents = () => {
+    if (eventsAssigned || !events || !swiperRef.current) return;
+    Object.keys(events).forEach(eventName => {
+      swiperRef.current.on(eventName, events[eventName]);
+    });
+  };
+  const detachEvents = () => {
+    if (!events || !swiperRef.current) return;
+    Object.keys(events).forEach(eventName => {
+      swiperRef.current.off(eventName, events[eventName]);
+    });
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    return () => {
+      if (swiperRef.current) swiperRef.current.off('_beforeBreakpoint', onBeforeBreakpoint);
+    };
+  });
+
+  // set initialized flag
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (!initializedRef.current && swiperRef.current) {
+      swiperRef.current.emitSlidesClasses();
+      initializedRef.current = true;
+    }
+  });
+
+  // mount swiper
+  useIsomorphicLayoutEffect(() => {
+    if (externalElRef) {
+      externalElRef.current = swiperElRef.current;
+    }
+    if (!swiperElRef.current) return;
+    if (swiperRef.current.destroyed) {
+      initSwiper();
+    }
+    (0,_shared_update_on_virtual_data_mjs__WEBPACK_IMPORTED_MODULE_2__.m)({
+      el: swiperElRef.current,
+      nextEl: nextElRef.current,
+      prevEl: prevElRef.current,
+      paginationEl: paginationElRef.current,
+      scrollbarEl: scrollbarElRef.current,
+      swiper: swiperRef.current
+    }, swiperParams);
+    if (onSwiper && !swiperRef.current.destroyed) onSwiper(swiperRef.current);
+    // eslint-disable-next-line
+    return () => {
+      if (swiperRef.current && !swiperRef.current.destroyed) {
+        swiperRef.current.destroy(true, false);
+      }
+    };
+  }, []);
+
+  // watch for params change
+  useIsomorphicLayoutEffect(() => {
+    attachEvents();
+    const changedParams = (0,_shared_update_on_virtual_data_mjs__WEBPACK_IMPORTED_MODULE_2__.a)(passedParams, oldPassedParamsRef.current, slides, oldSlides.current, c => c.key);
+    oldPassedParamsRef.current = passedParams;
+    oldSlides.current = slides;
+    if (changedParams.length && swiperRef.current && !swiperRef.current.destroyed) {
+      (0,_shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__.u)({
+        swiper: swiperRef.current,
+        slides,
+        passedParams,
+        changedParams,
+        nextEl: nextElRef.current,
+        prevEl: prevElRef.current,
+        scrollbarEl: scrollbarElRef.current,
+        paginationEl: paginationElRef.current
+      });
+    }
+    return () => {
+      detachEvents();
+    };
+  });
+
+  // update on virtual update
+  useIsomorphicLayoutEffect(() => {
+    (0,_shared_update_on_virtual_data_mjs__WEBPACK_IMPORTED_MODULE_2__.u)(swiperRef.current);
+  }, [virtualData]);
+
+  // bypass swiper instance to slides
+  function renderSlides() {
+    if (swiperParams.virtual) {
+      return renderVirtual(swiperRef.current, slides, virtualData);
+    }
+    return slides.map((child, index) => {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(child, {
+        swiper: swiperRef.current,
+        swiperSlideIndex: index
+      });
+    });
+  }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Tag, _extends({
+    ref: swiperElRef,
+    className: (0,_shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__.d)(`${containerClasses}${className ? ` ${className}` : ''}`)
+  }, restProps), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(SwiperContext.Provider, {
+    value: swiperRef.current
+  }, slots['container-start'], /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(WrapperTag, {
+    className: (0,_shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__.w)(swiperParams.wrapperClass)
+  }, slots['wrapper-start'], renderSlides(), slots['wrapper-end']), (0,_shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__.n)(swiperParams) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    ref: prevElRef,
+    className: "swiper-button-prev"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    ref: nextElRef,
+    className: "swiper-button-next"
+  })), (0,_shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__.b)(swiperParams) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    ref: scrollbarElRef,
+    className: "swiper-scrollbar"
+  }), (0,_shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__.a)(swiperParams) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    ref: paginationElRef,
+    className: "swiper-pagination"
+  }), slots['container-end']));
+});
+Swiper.displayName = 'Swiper';
+
+const SwiperSlide = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function (_temp, externalRef) {
+  let {
+    tag: Tag = 'div',
+    children,
+    className = '',
+    swiper,
+    zoom,
+    lazy,
+    virtualIndex,
+    swiperSlideIndex,
+    ...rest
+  } = _temp === void 0 ? {} : _temp;
+  const slideElRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const [slideClasses, setSlideClasses] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('swiper-slide');
+  const [lazyLoaded, setLazyLoaded] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  function updateClasses(_s, el, classNames) {
+    if (el === slideElRef.current) {
+      setSlideClasses(classNames);
+    }
+  }
+  useIsomorphicLayoutEffect(() => {
+    if (typeof swiperSlideIndex !== 'undefined') {
+      slideElRef.current.swiperSlideIndex = swiperSlideIndex;
+    }
+    if (externalRef) {
+      externalRef.current = slideElRef.current;
+    }
+    if (!slideElRef.current || !swiper) {
+      return;
+    }
+    if (swiper.destroyed) {
+      if (slideClasses !== 'swiper-slide') {
+        setSlideClasses('swiper-slide');
+      }
+      return;
+    }
+    swiper.on('_slideClass', updateClasses);
+    // eslint-disable-next-line
+    return () => {
+      if (!swiper) return;
+      swiper.off('_slideClass', updateClasses);
+    };
+  });
+  useIsomorphicLayoutEffect(() => {
+    if (swiper && slideElRef.current && !swiper.destroyed) {
+      setSlideClasses(swiper.getSlideClasses(slideElRef.current));
+    }
+  }, [swiper]);
+  const slideData = {
+    isActive: slideClasses.indexOf('swiper-slide-active') >= 0,
+    isVisible: slideClasses.indexOf('swiper-slide-visible') >= 0,
+    isPrev: slideClasses.indexOf('swiper-slide-prev') >= 0,
+    isNext: slideClasses.indexOf('swiper-slide-next') >= 0
+  };
+  const renderChildren = () => {
+    return typeof children === 'function' ? children(slideData) : children;
+  };
+  const onLoad = () => {
+    setLazyLoaded(true);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Tag, _extends({
+    ref: slideElRef,
+    className: (0,_shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_3__.d)(`${slideClasses}${className ? ` ${className}` : ''}`),
+    "data-swiper-slide-index": virtualIndex,
+    onLoad: onLoad
+  }, rest), zoom && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(SwiperSlideContext.Provider, {
+    value: slideData
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "swiper-zoom-container",
+    "data-swiper-zoom": typeof zoom === 'number' ? zoom : undefined
+  }, renderChildren(), lazy && !lazyLoaded && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "swiper-lazy-preloader"
+  }))), !zoom && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(SwiperSlideContext.Provider, {
+    value: slideData
+  }, renderChildren(), lazy && !lazyLoaded && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "swiper-lazy-preloader"
+  })));
+});
+SwiperSlide.displayName = 'SwiperSlide';
 
 
 

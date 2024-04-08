@@ -34,6 +34,16 @@ import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 // Import gallery icon
 import { gallery } from '@wordpress/icons';
 
+import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -97,23 +107,34 @@ export default function Edit(props) {
 				{/* Display images if any exist */}
 				{hasImages && (
 					<>
-						<figure className="simple-hv-slider-inner-container splide">
-							<div class="splide__track">
-								<ul class="splide__list">
-									{props.attributes.images.map((image, index) => (
-										<figure class="splide__slide">
-											<img
-												key={index}
-												src={image.url}
-												alt={image.alt}
-												title={image.title}
-											/>
-											<figcaption>{image.caption}</figcaption>
-										</figure>
-									))}
-								</ul>
-							</div>
-						</figure>
+						<Swiper
+							// install Swiper modules
+							modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
+							autoplay={{ delay: 2000 }}
+							loop={true}
+							spaceBetween={50}
+							slidesPerView={1}
+							navigation
+							pagination={{ clickable: true }}
+							scrollbar={{ draggable: true }}
+							onSwiper={(swiper) => console.log(swiper)}
+							onSlideChange={() => console.log('slide change')}
+						>
+
+							{props.attributes.images.map((image, index) => (
+								<SwiperSlide>
+									<figure>
+										<img
+											key={index}
+											src={image.url}
+											alt={image.alt}
+											title={image.title}
+										/>
+										<figcaption>{image.caption}</figcaption>
+									</figure>
+								</SwiperSlide>
+							))}
+						</Swiper>
 					</>
 				)}
 

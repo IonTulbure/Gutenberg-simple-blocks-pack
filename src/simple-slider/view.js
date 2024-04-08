@@ -21,24 +21,46 @@
  */
 
 /* eslint-disable no-console */
-import Splide from '@splidejs/splide';
 
-// Import our default css theme for splide
-import '@splidejs/splide/css';
+import { Swiper } from 'swiper';
+import { Autoplay, Keyboard, Navigation, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+// import "./styles.css";
 
 // This should only be output on the frontend of the site - NOT the editor
-console.log("hello from the frontend.")
 
 document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        autoplay: {
+            delay: 2000,
+        },
+        loop: true,
 
-    // Splide
-    const splides = document.querySelectorAll('.splide')
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
 
-    if (!!splides && splides.length > 0) {
-        splides.forEach(splide => {
-            new Splide(splide, { type: 'loop', autoplay: true, perPage: 1, pauseOnHover: false }).mount()
-        })
-    }
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
 })
-console.log("Hello World! (from mcx-simple-slider blocksdfvxcvcx)");
+
+console.log("Hello World! (from mcx-simple-slider blocks)");
 /* eslint-enable no-console */

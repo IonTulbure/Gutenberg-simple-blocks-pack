@@ -12,4 +12,9 @@
   background-color: #fefefe;
 }
 
+figure img {
+  height: auto;
+  max-width: 100%;
+}
+
 /*# sourceMappingURL=style-index.css.map*/

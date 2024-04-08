@@ -7,5 +7,12 @@
 
 .wp-block-mcx-simple-slider {
 	padding: 2px;
-	background-color:#fefefe ;
+	background-color: #fefefe;
+}
+
+figure {
+	img {
+		height: auto;
+		max-width: 100%;
+	}
 }
