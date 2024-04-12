@@ -144,8 +144,8 @@ export default function Edit(props) {
 						gallery
 						icon={<MediaPlaceholderBlockIcon />}
 						labels={{
-							title: "Horizontal & vertical slider.",
-							instructions: "Create an awesome simple slider.",
+							title: __('Horizontal & vertical slider.', 'gutenberg-simple-blocks-pack'),
+							instructions: __('Create an awesome simple slider.', 'gutenberg-simple-blocks-pack'),
 						}}
 						onSelect={(newImages) => props.setAttributes({ images: newImages })}
 					/>
