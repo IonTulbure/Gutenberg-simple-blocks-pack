@@ -32,7 +32,7 @@ import { ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
 // Import gallery icon
-import { gallery } from '@wordpress/icons';
+import { gallery, more } from '@wordpress/icons';
 
 import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
@@ -76,8 +76,7 @@ export default function Edit(props) {
 		<>
 			{/* Inspector controls */}
 			<InspectorControls>
-				<PanelBody title={__("Settings", "gutenberg-simple-blocks-pack")}>
-					Testing
+				<PanelBody title={__("Settings", "gutenberg-simple-blocks-pack")} initialOpen={true}>
 				</PanelBody>
 			</InspectorControls>
 			<div {...useBlockProps()}>
