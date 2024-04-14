@@ -34,12 +34,11 @@ export default function save(props) {
 	return (
 		<div {...blockProps}>
 			<>
-				<div class="swiper-wrapper">
+				<div className="swiper-wrapper">
 					{props.attributes.images.map((image, index) => (
-						<div class="swiper-slide">
+						<div className="swiper-slide" key={index}>
 							<figure>
 								<img
-									key={index}
 									src={image.url}
 									alt={image.alt}
 									title={image.title}
