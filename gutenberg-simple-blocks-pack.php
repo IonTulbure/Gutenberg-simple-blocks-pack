@@ -98,6 +98,7 @@ function mcx_gsbp_enqueue_swiper_styles()
     // Enqueue Swiper library CSS
     wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), '6.8.4');
 
+
     // wp_enqueue_script('custom-view-js', plugins_url('/build/simple-slider/view.js', __FILE__), array('swiper-js'), '1.0.0', true);
 
     // Enqueue Swiper CSS
