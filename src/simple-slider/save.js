@@ -48,6 +48,7 @@ export default function save(props) {
 						</div>
 					))}
 				</div>
+				<div className="swiper-pagination"></div>
 			</>
 		</div>
 	);
