@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             delay: 2000,
         },
         loop: true,
-
+        slidesPerView: 1,
         // If we need pagination
         pagination: {
             el: '.swiper-pagination',
