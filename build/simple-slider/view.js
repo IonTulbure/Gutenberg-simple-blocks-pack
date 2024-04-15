@@ -10437,7 +10437,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     // And if we need scrollbar
     scrollbar: {
-      el: '.swiper-scrollbar'
+      el: '.swiper-scrollbar',
+      draggable: true
     }
   });
 });
