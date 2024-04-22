@@ -22,7 +22,7 @@ import { BlockIcon } from '@wordpress/block-editor';
 
 import { Dashicon } from '@wordpress/components';
 
-// Import PanelBody, TextControl, ToggleControl components
+// Import PanelBody, TextControl, ToggleControl, RangeControl components
 import { PanelBody, TextControl, ToggleControl, RangeControl } from '@wordpress/components';
 
 // Import ToolbarButton & ToolbarGroup components

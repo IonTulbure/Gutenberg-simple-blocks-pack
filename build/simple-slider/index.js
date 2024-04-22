@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Import PanelBody, TextControl, ToggleControl components
+// Import PanelBody, TextControl, ToggleControl, RangeControl components
 
 
 // Import ToolbarButton & ToolbarGroup components
