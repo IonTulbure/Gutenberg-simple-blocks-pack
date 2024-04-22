@@ -11,6 +11,10 @@
         "images": {
             "type": "array",
             "default": []
+		},
+		"speed": {
+			"type": "number",
+			"default": 1
 		}
 	},
 	"example": {
