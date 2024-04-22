@@ -184,6 +184,7 @@ function Edit(props) {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Horizontal & vertical slider.', 'gutenberg-simple-blocks-pack'),
       instructions: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Create an awesome simple slider.', 'gutenberg-simple-blocks-pack')
     },
+    allowedTypes: ['image'],
     onSelect: newImages => props.setAttributes({
       images: newImages
     })

@@ -147,6 +147,7 @@ export default function Edit(props) {
 							title: __('Horizontal & vertical slider.', 'gutenberg-simple-blocks-pack'),
 							instructions: __('Create an awesome simple slider.', 'gutenberg-simple-blocks-pack'),
 						}}
+						allowedTypes={['image']}
 						onSelect={(newImages) => props.setAttributes({ images: newImages })}
 					/>
 				)}
