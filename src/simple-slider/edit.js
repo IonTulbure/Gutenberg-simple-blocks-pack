@@ -77,6 +77,15 @@ export default function Edit(props) {
 			{/* Inspector controls */}
 			<InspectorControls>
 				<PanelBody title={__("Settings", "gutenberg-simple-blocks-pack")} initialOpen={true}>
+					<RangeControl
+						label="Slide speed (secs)"
+						help="Select how long each slide of the slider active"
+						max={12}
+						min={1}
+						step={1}
+						value={props.attributes.speed}
+						onChange={(val) => { props.setAttributes({ speed: val }) }}
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...useBlockProps()}>
