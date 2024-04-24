@@ -11589,7 +11589,7 @@ __webpack_require__.r(__webpack_exports__);
   \**************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"mcx/simple-slider","version":"0.1.0","title":"Horizontal & vertical slider.","category":"mcx-gsbp-gutenberg-blocks","icon":"slides","description":"A simple slider with horizontal or vertical layout.","attributes":{"images":{"type":"array","default":[]},"speed":{"type":"number","default":1}},"example":{"attributes":{"preview":true}},"supports":{"html":true,"color":{"background":true,"text":true},"spacing":{"padding":true,"margin":true},"anchor":true,"align":true},"textdomain":"simple-slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","viewStyle":"file:./view.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"mcx/simple-slider","version":"0.1.0","title":"Horizontal & vertical slider.","category":"mcx-gsbp-gutenberg-blocks","icon":"slides","description":"A simple slider with horizontal or vertical layout.","attributes":{"images":{"type":"array","default":[]},"speed":{"type":"number","default":1}},"example":{"attributes":{"preview":true}},"supports":{"html":true,"color":{"background":true,"text":true},"spacing":{"padding":true,"margin":true},"anchor":true,"align":true},"textdomain":"simple-slider","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":["file:./view.js","swiper-slider-script"],"viewStyle":["file:./view.css","swiper-slider-style"]}');
 
 /***/ })
 
