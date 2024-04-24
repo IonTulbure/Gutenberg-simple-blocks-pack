@@ -80,27 +80,3 @@ function mcx_gsbp_block_category($categories, $post)
         $categories
     );
 }
-
-
-/**
- * Adds css & js for init swiper slider on frontend
- * 
- */
-
-add_action('wp_enqueue_scripts', 'mcx_gsbp_enqueue_swiper_styles');
-
-function mcx_gsbp_enqueue_swiper_styles()
-{
-
-    // Enqueue Swiper library JS
-    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), '6.8.4', true);
-
-    // Enqueue Swiper library CSS
-    wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), '6.8.4');
-
-
-    // wp_enqueue_script('custom-view-js', plugins_url('/build/simple-slider/view.js', __FILE__), array('swiper-js'), '1.0.0', true);
-
-    // Enqueue Swiper CSS
-    // wp_enqueue_style('custom-css', plugins_url('/build/simple-slider/view.css', __FILE__), array('swiper-css'), '1.0.0');
-}
